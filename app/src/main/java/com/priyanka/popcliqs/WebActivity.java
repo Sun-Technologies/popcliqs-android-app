@@ -15,7 +15,5 @@ public class WebActivity extends Activity {
         webView = (WebView) findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://popcliqs.com/beta/about.php");
-
     }
-
 }

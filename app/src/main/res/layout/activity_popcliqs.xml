@@ -80,7 +80,8 @@
         android:id="@+id/textView8"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView7"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="25dp"
+        android:clickable="true"/>
 
     <EditText
         android:layout_width="wrap_content"

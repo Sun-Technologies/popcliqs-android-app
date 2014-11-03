@@ -19,18 +19,12 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-
 public class popcliqs extends Activity {
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         final Context context = this;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popcliqs);
-
-        final EditText email = (EditText) findViewById(R.id.editText);
-        final EditText password = (EditText) findViewById(R.id.editText3);
 
         final TextView forgotPassword = (TextView) findViewById(R.id.textView4);
         forgotPassword.setText(Html.fromHtml(getResources().getString(R.string.Forgot_Password)));
@@ -41,17 +35,11 @@ public class popcliqs extends Activity {
         signUp.setMovementMethod(LinkMovementMethod.getInstance());
 
         final TextView howItWorks = (TextView) findViewById(R.id.textView8);
-        howItWorks.setText(Html.fromHtml(getResources().getString(R.string.How_Works)));
-        howItWorks.setMovementMethod(LinkMovementMethod.getInstance());
-
         howItWorks.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
                 Intent intent = new Intent(context, WebActivity.class);
                 startActivity(intent);
             }
-
         });
     }
-
 }
