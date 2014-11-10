@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">popcliqs</string>
-    <string name="Forgot_Password">&lt;a href="http://popcliqs.com/beta/">Forgot Password&lt;/a></string>
-    <string name="sign_up">&lt;a href="http://popcliqs.com/beta/">Sign Up&lt;/a></string>
+    <string name="forgotPassword">&lt;a href="http://popcliqs.com/beta/">Forgot Password&lt;/a></string>
+    <string name="signUp">&lt;a href="http://popcliqs.com/beta/">Sign Up&lt;/a></string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_check_in">CheckIn</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
