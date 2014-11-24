@@ -1,12 +1,13 @@
 package com.priyanka.popcliqs;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.webkit.WebView;
 
-public class WebActivity extends Activity {
+
+public class HomePage extends Activity {
 
     private WebView webView;
 
@@ -15,6 +16,6 @@ public class WebActivity extends Activity {
         setContentView(R.layout.webview);
 
         webView = (WebView) findViewById(R.id.webView1);
-        webView.loadUrl("http://popcliqs.com/beta/about.php");
+        webView.loadUrl("http://popcliqs.com/beta/home.php");
     }
 }

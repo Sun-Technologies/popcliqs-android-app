@@ -51,13 +51,13 @@ public class Popcliqs extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popcliqs);
 
-        final EditText emailId = (EditText) findViewById(R.id.editText);
+        final EditText emailId       = (EditText) findViewById(R.id.editText);
         final EditText passwordField = (EditText) findViewById(R.id.editText3);
 
         final TextView login = (TextView) findViewById(R.id.textView2);
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                final String email = emailId.getText().toString();
+                final String email    = emailId.getText().toString();
                 final String password = passwordField.getText().toString();
 
                 if (email.equals("") || password.equals("")) {
@@ -66,7 +66,6 @@ public class Popcliqs extends Activity {
                     try {
                         GetDataFromBlog getDataFromBlog = new GetDataFromBlog();
                         getDataFromBlog.execute();
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -97,18 +96,16 @@ public class Popcliqs extends Activity {
         protected String doInBackground(Object[] arg0) {
             int responseCode = -1;
             final Context context = Popcliqs.this;
-
             try {
-
                 URL blogFeed = new URL("http://popcliqs.com/beta/login.service.php?usernm=tahir@popcliqs.com&pwd=123456");
                 //to make connection to the url
                 HttpURLConnection urlConnection = (HttpURLConnection) blogFeed.openConnection();
                 urlConnection.connect();
                 //to get response code from url
                 responseCode = urlConnection.getResponseCode();
-                if(responseCode==HttpURLConnection.HTTP_OK){
+                if(responseCode == HttpURLConnection.HTTP_OK){
                     InputStream is = urlConnection.getInputStream();
-                    Reader reader = new InputStreamReader(is);
+                    Reader reader  = new InputStreamReader(is);
 
                     int nextCharacter;
                     String responseData = "";
@@ -119,13 +116,12 @@ public class Popcliqs extends Activity {
                         responseData += (char) nextCharacter;
                     }
 
-                    JSONObject jsonResponse =new JSONObject(responseData);
+                    JSONObject jsonResponse = new JSONObject(responseData);
                     int exitCode = jsonResponse.getInt("exit_cd");
                     if(exitCode == 0){
                         Intent intent = new Intent(context, LoginActivity.class);
                         startActivity(intent);
                     }
-                    //  Log.v(TAG, exitCode);
                 }else {
                     Log.i(TAG, "Unresponsive Code" + responseCode);
                 }
